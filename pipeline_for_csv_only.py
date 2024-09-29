@@ -4,13 +4,10 @@ import duckdb
 import pandas as pd
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
-
 from duckdb import DuckDBPyRelation
 from pandas import DataFrame
 
 load_dotenv()
-
-# Downloading files from Google Drive
 
 # Function to download the files from given link
 def download_google_drive_files(folder_url, local_directory):
@@ -36,7 +33,7 @@ def read_csv(file_path):
 # Function to add a "Total Sales" column
 def transform(df: DuckDBPyRelation) -> DataFrame:
     # Run the SQL responsibile for adding the new column, over virtual table
-    transformed_df = duckdb.sql("SELECT *, quantidade * valor AS total_sales FROM df").df()
+    transformed_df = duckdb.sql("SELECT *, quantidade * valor AS total_vendas FROM df").df()
     # Remove row from virtual table to clean up
     return transformed_df
 
