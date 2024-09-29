@@ -91,6 +91,7 @@ def pipeline():
     processed = processed_files(con)
     files_and_types = list_files_types(local_directory)
 
+    logs = []
     for file_path, type in files_and_types:
         file_name = os.path.basename(file_path)
         if file_name not in processed:
@@ -99,8 +100,11 @@ def pipeline():
             save_into_postgres(transformed_df, "vendas_calculado")
             log_file(con, file_name)
             print(f"File {file_name} processed and saved")
+            logs.append(f"File {file_name} processed and saved")
         else:
             print(f"File {file_name} have already been processed before")
+            logs.append(f"File {file_name} have already been processed before")
+    return logs
 
 # Calling above functions
 if __name__ == "__main__":
