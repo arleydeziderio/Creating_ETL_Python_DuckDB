@@ -13,12 +13,12 @@ from datetime import datetime
 # Load Environment Variables
 load_dotenv()
 
-# Connect to the database
+# Function to connect to the database
 def connect_db():
     """Connect to DuckDB database - creates the db if it doesn't exist"""
     return duckdb.connect(database='duckdb.db', read_only=False)
 
-# Check and create table if it doesn't exist
+# Function to check and create table if it doesn't exist
 def start_table(con):
     """Create the table if it doesn't exist"""
     con.execute("""
@@ -28,15 +28,15 @@ def start_table(con):
         )
     """)
 
-# Logs a new file into the database with the current date/time
-def log_file(con, files_names):
+# Function to log a new file into the database with the current date/time
+def log_file(con, file_name):
     """"Logs a new file into the database with the current date/time."""
     con.execute("""
         INSERT INTO historico_arquivos (nome_arquivo, horario_processamento)
         VALUES (?, ?)
-"""), (files_names, datetime.now())
+    """, (file_name, datetime.now()))
     
-# Returns a set with each processed file name
+# Function to return a set with each processed file name
 def processed_files(con):
     """Returns a set with each processed files name"""
     return set(row[0] for row in con.execute("SELECT nome_arquivo FROM historico_arquivos").fetchall())
@@ -56,8 +56,6 @@ def list_files_types(directory):
             type = file.split(".")[-1]
             files_and_types.append((complete_path, type))
     return files_and_types
-
-# Function to read
 
 # Function to read files according to its type and returns a DataFrame
 def read_files(file_path, type):
@@ -98,12 +96,12 @@ if __name__ == "__main__":
     files_and_types = list_files_types(local_directory)
 
     for file_path, type in files_and_types:
-        files_names = os.path.basename(file_path)
-        if files_names not in processed:
+        file_name = os.path.basename(file_path)
+        if file_name not in processed:
             df = read_files(file_path, type)
             transformed_df = transform(df)
             save_into_postgres(transformed_df, "vendas_calculado")
-            log_file(con, files_names)
-            print(f"File {files_names} processed and saved")
+            log_file(con, file_name)
+            print(f"File {file_name} processed and saved")
         else:
-            print(f"File {files_names} have already been processed before")
+            print(f"File {file_name} have already been processed before")

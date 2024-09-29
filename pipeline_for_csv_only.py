@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from duckdb import DuckDBPyRelation
 from pandas import DataFrame
 
+# Load Environment Variables
 load_dotenv()
 
 # Function to download the files from given link
@@ -46,9 +47,9 @@ def save_into_postgres(df_duckdb, table):
 
 # Calling above functions
 if __name__ == "__main__":
-    folder_url = 'https://drive.google.com/drive/folders/1maqV7E3NRlHp12CsI4dvrCFYwYi7BAAf'
+    folder_url = 'https://drive.google.com/drive/folders/1koA2HmWYH7ugErMfE4-0c5Dhis11pZnj?usp=sharing'
     local_directory = './gdown_folder'
-    #download_google_drive_files(folder_url, local_directory)
+    download_google_drive_files(folder_url, local_directory)
     file_list = listing_csv_files(local_directory)
     for file_path in file_list:
         duck_db_df = read_csv(file_path)
