@@ -24,7 +24,7 @@
 
  ## To Use
 
-To clone and run this repository you'll need [Git](https://git-scm.com), [Python](https://www.python.org/downloads/) and the above libs installed on your computer (install the libs using pip install <lib_name>). \
+To clone and run this repository you'll need [Git](https://git-scm.com), [Python](https://www.python.org/downloads/) and the above libs installed on your computer (install the libs using pip install <lib_name>).
 
 From your command line:
 
