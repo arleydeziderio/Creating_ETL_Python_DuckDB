@@ -3,5 +3,6 @@
 
 <div align="center">
 	
-  A cross-platform app to download your purchased courses (paid or free) from Udemy, the code is provided as-is and I am not held resposible for any legal issues resulting from the use of this program.<br> 
+  Project to process files in different extensions and export the processed data into a Postgres DB <br>
+
 </div>
