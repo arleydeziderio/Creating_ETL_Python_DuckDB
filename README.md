@@ -7,12 +7,12 @@
 
 </div>
 
-> Libs used in this project
+ Libs used in this project
 
-> * OS
-> * gdown
-> * DuckDB
-> * Pandas
-> * SQLAlchemy
-> * dotenv
-> * datetime
+ * OS
+ * gdown
+ * DuckDB
+ * Pandas
+ * SQLAlchemy
+ * dotenv
+ * datetime
