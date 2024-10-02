@@ -7,8 +7,6 @@
 
 </div>
 
- 
- 
  Libs used in this project
 
  * OS
@@ -20,7 +18,7 @@
  * datetime
  * streamlit
  * psycopg2-binary
- * psycopg2<br/>
+ * psycopg2
 <br/>
 
  ## To Use
