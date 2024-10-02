@@ -21,6 +21,8 @@
  * psycopg2
 <br/>
 
+Containerization using Docker
+
  ## To Use
 
 To clone and run this repository you'll need [Git](https://git-scm.com), [Python](https://www.python.org/downloads/) and the above libs installed on your computer (install the libs using pip install <lib_name>).
@@ -43,3 +45,5 @@ python app.py
 # Run the app via web browser
 Access the following URL: https://deploying-app-docker.onrender.com
 ```
+<br/>
+<br/>
