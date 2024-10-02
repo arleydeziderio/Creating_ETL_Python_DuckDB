@@ -21,7 +21,8 @@
  * psycopg2
 <br/>
 
-Containerization using Docker
+Containerization:
+* Docker
 
  ## To Use
 
