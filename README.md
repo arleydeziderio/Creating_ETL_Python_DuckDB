@@ -17,8 +17,8 @@
  * dotenv
  * datetime
  * streamlit
- * psycopg2-binary
  * psycopg2
+ * psycopg2-binary
 <br/>
 
 Containerization:
