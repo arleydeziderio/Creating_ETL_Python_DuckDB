@@ -62,9 +62,9 @@ I've developed four different ETL scripts using Python, each one of them with a 
         * List the files which the extension is .csv
         * read the csv files and return a DuckDB DataFrame
 
-      * Transform:
+    * Transform:
         * Run a SQL command to add a new column in a virtual table using DuckDB
 
-      * Load:
+    * Load:
         * Convert the DuckDB into Pandas
         * Save the Pandas DataFrame into a PostgresDB (DB which is in a cloud environment - Render)
