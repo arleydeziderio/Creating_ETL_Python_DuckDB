@@ -68,7 +68,7 @@ I've developed four different ETL scripts using Python, each one of them with a 
         * Convert the DuckDB into Pandas
         * Save the Pandas DataFrame into a PostgresDB (DB which is in a cloud environment - Render)
 
-* pipeline_for_csv_only_poreventing_duplicate_files.py:<br/>
+* pipeline_for_csv_only_preventing_duplicate_files.py:<br/>
     Only processes files which the extension is .csv and was conceived to do the following:
     <br/>
 
@@ -79,6 +79,25 @@ I've developed four different ETL scripts using Python, each one of them with a 
         * Checks if the files have already been processed before, if they have already been processed, then they'll be ignored, otherwise, they'll be processed
         * Returns a set with each processed files name
         * Read the csv files and return a DuckDB DataFrame
+
+    * Transform:
+        * Run a SQL command to add a new column in a virtual table using DuckDB
+
+    * Load:
+        * Convert the DuckDB into Pandas
+        * Save the Pandas DataFrame into a PostgresDB (DB which is in a cloud environment - Render)
+
+* pipeline_general_files.py:<br/>
+    Processes files which extensions are .csv, .json and .parquet and was conceived to do the following:
+    <br/>
+
+    * Extract: 
+        * Download files from a Google Drive using gdown lib
+        * List the files and their extentions and paths
+        * Create a virtual table to log the downloaded files
+        * Checks if the files have already been processed before, if they have already been processed, then they'll be ignored, otherwise, they'll be processed
+        * Returns a set with each processed files name
+        * Read the csv, JSON and Parquet files and return a DuckDB DataFrame, if file extension isn't one of the them, returns and error
 
     * Transform:
         * Run a SQL command to add a new column in a virtual table using DuckDB
