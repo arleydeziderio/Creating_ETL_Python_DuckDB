@@ -50,7 +50,8 @@ Access the following URL: https://deploying-app-docker.onrender.com
 
 ## Description
 
-I've developed four different ETL scripts using Python, each one of them with a new, or better code and porpose.
+I've developed four different ETL scripts using Python, each one of them with a new or better code and porpose.
+I've also created an app script so it can be called using a Web Service Application
 
 * pipeline_for_csv_only.py:<br/>
     Only processes files which the extension is .csv and was conceived to do the following:
@@ -125,3 +126,6 @@ I've developed four different ETL scripts using Python, each one of them with a 
         * Create a function to store all execution instructions to enable its calling from an outside Python script
         * Convert the DuckDB into Pandas
         * Save the Pandas DataFrame into a PostgresDB (DB which is in a cloud environment - Render)
+
+* app.py
+    Using Streamlit to enable a web browser interface, this script allows users to start the entire processes by clicking on a button and get each file name that has been processed
