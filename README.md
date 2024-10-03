@@ -105,3 +105,23 @@ I've developed four different ETL scripts using Python, each one of them with a 
     * Load:
         * Convert the DuckDB into Pandas
         * Save the Pandas DataFrame into a PostgresDB (DB which is in a cloud environment - Render)
+
+* pipeline_improved.py:<br/>
+    Processes files which extensions are .csv, .json and .parquet and was conceived to do the following:
+    <br/>
+
+    * Extract: 
+        * Download files from a Google Drive using gdown lib
+        * List the files, their extentions and paths into an array
+        * Create a virtual table to log the downloaded files
+        * Checks if the files have already been processed before, if they have already been processed, then they'll be ignored, otherwise, they'll be processed
+        * Returns a set with each processed files name
+        * Read the csv, JSON and Parquet files and return a DuckDB DataFrame, if file extension isn't one of the them, returns and error
+
+    * Transform:
+        * Run a SQL command to add a new column in a virtual table using DuckDB
+
+    * Load:
+        * Create a function to store all execution instructions to enable its calling from an outside Python script
+        * Convert the DuckDB into Pandas
+        * Save the Pandas DataFrame into a PostgresDB (DB which is in a cloud environment - Render)
