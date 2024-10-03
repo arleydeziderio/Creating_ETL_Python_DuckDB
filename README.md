@@ -55,12 +55,11 @@ I've developed four different ETL scripts using Python, each one of them with a 
 * pipeline_for_csv_only.py:<br/>
     Only processes files which the extension is .csv and was conceived to do the following:
     <br/>
-    <br/>
 
     * Extract: 
         * Download files from a Google Drive using gdown lib
         * List the files which the extension is .csv
-        * read the csv files and return a DuckDB DataFrame
+        * Read the csv files and return a DuckDB DataFrame
 
     * Transform:
         * Run a SQL command to add a new column in a virtual table using DuckDB
