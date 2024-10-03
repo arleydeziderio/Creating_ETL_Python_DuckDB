@@ -127,6 +127,5 @@ I've also created an app script so it can be called using a Web Service Applicat
         * Convert the DuckDB into Pandas
         * Save the Pandas DataFrame into a PostgresDB (DB which is in a cloud environment - Render)
 
-* app.py:
-<br/>
+* app.py:<br/>
     Using Streamlit to enable a web browser interface, this script allows users to start the entire processes by clicking on a button and get each file name that has been processed
