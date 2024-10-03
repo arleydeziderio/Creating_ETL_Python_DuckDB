@@ -53,7 +53,7 @@ def listing_csv_files(directory):
     #print(csv_files)
     return csv_files
 
-# Function to read CSV Files and return a DuckDB DataFram
+# Function to read CSV Files and return a DuckDB DataFrame
 def read_csv(file_path):
     return duckdb.read_csv(file_path)
 
